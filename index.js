@@ -9,7 +9,7 @@ function showRepositories (event, data) {
 function getRepositories () {
   const req = new XMLHttpRequest();
   req.addEventListener("load", showRepositories);
-  req.open("GET", "https://api.github.com/users/octocat/repos?access_token=e2b24abbf38d1d0725ec21ac88f13938383cf20b");
+  req.open("GET", "https://api.github.com/users/octocat/repos");
   req.send();
 }
 
@@ -17,7 +17,7 @@ function getCommits (element) {
   const name = element.dataset.repo;
   const req = new XMLHttpRequest();
   req.addEventListener("load", showCommits);
-  req.open("GET", `https://api.github.com/repos/octocat/${name}/commits?access_token=e2b24abbf38d1d0725ec21ac88f13938383cf20b`);
+  req.open("GET", `https://api.github.com/repos/octocat/${name}/commits`);
   req.send();
 }
 
